@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import {Component} from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from './components/Home';
+import BookList from "./components/BookList";
+import BookDetails from "./components/BookDetails";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
+import NotFound from "./components/NotFound";
+
+import './App.css';
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+
+class App extends Component{
+  render(){
+    return(
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" Component={Home}/>
+          <Route exact path="/books" Component={BookList}/>
+          <Route exact path="/books/:id" Component={BookDetails}/>
+          <Route exact path="/cart" Component={Cart}/>
+          <Route exact path="/checkout" Component={Checkout}/>
+          <Route  path="/not-found" Component={NotFound}/>
+          <Redirect to="/not-found"/>
+
+
+        </Switch>
+      </BrowserRouter>
+    )
+  }
 }
 
 export default App;
