@@ -1,4 +1,4 @@
-import {Component} from "react";
+import {component} from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Home from './components/Home';
@@ -9,9 +9,9 @@ import Checkout from "./components/Checkout";
 import NotFound from "./components/NotFound";
 
 import './App.css';
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import { Redirect } from "react-router-dom";
 
-class App extends Component{
+class App extends component{
   render(){
     return(
       <BrowserRouter>

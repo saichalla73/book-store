@@ -1,13 +1,13 @@
-import { Component } from "react"
+import { component } from "react"
 
-class Home extends Component{
+class Cart extends component{
     render(){
         return(
             <div>
-                Home
+                Cart
             </div>
         )
     }
 }
 
-export default Home;
+export default Cart;
